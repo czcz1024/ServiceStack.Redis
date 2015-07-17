@@ -55,7 +55,7 @@ namespace ServiceStack.Redis
         private static byte[] ToBytes<T>(T value)
         {
             var bytesValue = value as byte[];
-            if (bytesValue == null && !Equals(value, default(T)))
+            if (bytesValue == null &&(value is ValueType || !Equals(value, default(T))))
                 bytesValue = value.ToJson().ToUtf8Bytes();
             return bytesValue;
         }

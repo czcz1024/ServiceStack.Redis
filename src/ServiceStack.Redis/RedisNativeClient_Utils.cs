@@ -315,9 +315,9 @@ namespace ServiceStack.Redis
         {
             if (!AssertConnectedSocket()) return false;
 
-            Interlocked.Increment(ref __requestsPerHour);
-            if (__requestsPerHour % 20 == 0)
-                LicenseUtils.AssertValidUsage(LicenseFeature.Redis, QuotaType.RequestsPerHour, __requestsPerHour);
+            //Interlocked.Increment(ref __requestsPerHour);
+            //if (__requestsPerHour % 20 == 0)
+            //    LicenseUtils.AssertValidUsage(LicenseFeature.Redis, QuotaType.RequestsPerHour, __requestsPerHour);
 
             if (log.IsDebugEnabled)
                 CmdLog(cmdWithBinaryArgs);

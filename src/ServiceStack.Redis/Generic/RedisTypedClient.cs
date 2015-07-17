@@ -46,6 +46,14 @@ namespace ServiceStack.Redis.Generic
             get { return client; }
         }
 
+        public string NamespacePrefix
+        {
+            get
+            {
+                return client.NamespacePrefix;
+            }
+        }
+
         /// <summary>
         /// Use this to share the same redis connection with another
         /// </summary>
